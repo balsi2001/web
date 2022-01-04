@@ -1,0 +1,186 @@
+<!Doctype html>
+<html lang="zh-tw">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <title>蝚�11蝯� ��錰撠��</title>
+    <style>
+        .jumbotron {
+            background: url(https://blog.hamibook.com.tw/wp-content/uploads/2019/10/%E7%A4%BE%E7%95%9C%EF%BC%8C%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%BE%88%E5%84%AA%E9%9B%85.jpg);
+            background-position: center;
+            background-size: 100%;
+            margin-bottom: 0px;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            /* display: flex; */
+            flex-direction: column;
+        }
+        
+        .wrapper {
+            flex-grow: 1;
+        }
+        
+        .footer {
+            background-color: #a191b396;
+        }
+        
+        .navbar {
+            background-color: #a191d396;
+            height: 70px;
+        }
+        
+        .nav-link {
+            color: rgb(78, 73, 82);
+        }
+        
+        #buttons {
+            padding-top: 50px;
+            text-align: center;
+        }
+        
+        .btn {
+            border-radius: 6px;
+            padding: 15px 25px;
+            font-size: 20px;
+            text-decoration: none;
+            margin: 20px;
+            color: #fff;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .btn:active {
+            /*頝喃�銝�*/
+            transform: translate(0px, 1px);
+            -webkit-transform: translate(0px, 1px);
+            box-shadow: 0px 1px 0px 0px;
+        }
+        
+        .blue {
+            background-color: #55acee;
+            box-shadow: 0px 5px 0px 0px #3C93D5;
+        }
+        
+        .blue:hover {
+            background-color: #6FC6FF;
+        }
+        
+        label {
+            font-size: 120%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container" style="height: 200px;">
+            <h1 class="display-4" style="color: rgb(255, 255, 255);margin-top:3% ;margin-left: -10%; background-color: rgba(128, 119, 119, 0.616); width: 725px;">
+                �舀�撠见��� �曄�撠望糓雿�</h1>
+            <p class="lead" style="color: rgb(255, 255, 255);margin-top:3% ; margin-left: -10%;  width: 350px;">��佅撖思�雿删��讛�
+            </p>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="cover.html"><img src="FCU_LOGO.png" width="50px" height="50px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="all_comments.html">���㕑�隢�</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#write_comment.html">�𤏸�閰閗�</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#footer">�𨀣䲰�穃��</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <form style="margin-left:10%;margin-right: 10%;margin-top: 5%;margin-bottom: 5%;">
+        <div class="form-group" style="margin-bottom: 2%;">
+            <label>憛怠神鈭箏�蝔�</label>
+            <input class="form-control" id="exampleFormControlInput1" placeholder="憛怠�憪枏�">
+        </div>
+        <div class="form-group" style="margin-bottom: 2%;">
+            <label>��撅砍���</label>
+            <input class="form-control" id="exampleFormControlInput1" placeholder="憛怠��砍虬�滨迂">
+        </div>
+        <div class="score" style="margin-bottom: 2%;">
+            <label>皛踵�摨西���(1:�𧼮虜銝齿遛�蘖5:�𧼮虜皛踵�)</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                <label class="form-check-label" for="inlineRadio3">3</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                <label class="form-check-label" for="inlineRadio3">4</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                <label class="form-check-label" for="inlineRadio3">5</label>
+            </div>
+        </div>
+        <div class="form-group" style="margin-bottom: 2%;">
+            <label for="exampleFormControlTextarea1">�批捆</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary" style="background-color:steelblue ;margin: 0%;">��枂</button>
+        </div>
+
+    </form>
+    <div class="wrapper">
+        <footer class="footer" id="footer" style="color: rgb(78, 73, 82)">
+            <div style="text-align: center;">
+                <br>
+                <font size="4"><b>�𨀣䲰�穃��</b></font><br>
+                <p>蝚�11蝯�<br> 銝駁�嚗𡁜祕蝧埝遛�誩漲隤踵䰻
+                    <br> 蝯�摱嚗𡁏��踵� �堒搻蝺� �舘�䁅躼 ��蔔�� 銝䀝蔔��<br>
+                </p>
+                <a href="https://docs.google.com/document/d/1eM_d9t1lJoqFc_i3XHIoO1O5omGnJNpqeVnazHYsadk/edit " style="color:rgb(78, 73, 82)">閮����</a><br>
+                <br>
+            </div>
+        </footer>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js " integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF " crossorigin="anonymous "></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js " integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js " integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2 " crossorigin="anonymous "></script>
+    -->
+</body>
+
+</html>
