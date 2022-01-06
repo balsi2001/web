@@ -1,0 +1,94 @@
+.jumbotron {
+    background: url(https://blog.hamibook.com.tw/wp-content/uploads/2019/10/%E7%A4%BE%E7%95%9C%EF%BC%8C%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%BE%88%E5%84%AA%E9%9B%85.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 0px;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    /* display: flex; */
+    flex-direction: column;
+}
+
+.wrapper {
+    flex-grow: 1;
+}
+
+.footer {
+    background-color: #a191b396;
+}
+
+.navbar {
+    background-color: #a191d396;
+    height: 70px;
+}
+
+.nav-link {
+    color: rgb(78, 73, 82);
+}
+
+#buttons {
+    padding-top: 50px;
+    text-align: center;
+}
+
+.btn {
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 16px;
+    text-decoration: none;
+    margin: 20px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+}
+
+.btn:active {
+    /*跳一下*/
+    transform: translate(0px, 1px);
+    -webkit-transform: translate(0px, 1px);
+    box-shadow: 0px 1px 0px 0px;
+}
+
+.blue {
+    background-color: #66B3FF;
+    box-shadow: 0px 4px 0px 0px #3C93D5;
+}
+
+.blue:hover {
+    background-color: #6FC6FF;
+}
+
+#buttons {
+    padding-top: 50px;
+    text-align: center;
+}
+
+.btn_write {
+    border-radius: 6px;
+    padding: 15px 25px;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 20px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+}
+
+.btn_write:active {
+    /*跳一下*/
+    transform: translate(0px, 1px);
+    -webkit-transform: translate(0px, 1px);
+    box-shadow: 0px 1px 0px 0px;
+}
+
+label {
+    font-size: 120%;
+}

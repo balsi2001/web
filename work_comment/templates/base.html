@@ -10,22 +10,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
     <title>第11組 期末專題</title>
-
-    <link rel="stylesheet" href="all.css">
+    
+    <link rel="stylesheet" href="/static/all.css">
 </head>
 
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container" style="height: 200px;">
-            <h1 class="display-4" style="color: rgb(255, 255, 255);margin-top:3% ;margin-left: -10%; background-color: rgba(128, 119, 119, 0.616); width: 725px;">
-                良才尋千里 找的就是你</h1>
-            <p class="lead" style="color: rgb(255, 255, 255);margin-top:3% ; margin-left: -10%;  width: 350px;">勇敢寫下你的意見
-            </p>
+            <h1 class="display-4" style="color: rgb(255, 255, 255);margin-top:3% ;margin-left: -10%; background-color: rgba(128, 119, 119, 0.616); width: 725px;">良才尋千里 找的就是你</h1>
+            <p class="lead" style="color: rgb(255, 255, 255);margin-top:3% ; margin-left: -10%;  width: 350px;">勇敢寫下你的意見</p>
         </div>
     </div>
 
     <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="cover.html"><img src="FCU_LOGO.png" width="50px" height="50px"></a>
+        <a class="navbar-brand" href="#"><img src="/static/FCU_LOGO.png" width="50px" height="50px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -44,24 +42,16 @@
             </ul>
         </div>
     </nav>
-    <div>
-        <a href="#" class="btn blue">&lt&lt 前一篇</a>
-        <a href="#" class="btn blue" style="float:right;">後一篇 &gt&gt</a>
-    </div>
- 
-    <div class="container" style="margin-top: 3%; margin-bottom: 3%;">
-        <div style="border-color:#aaaaee; border-width:1px; border-style:solid; padding:20px">
-            <h2>標題</h2>
-            <h5>公司名稱</h5>
-            <h5>評分</h5><br>
-            <p>內容</p><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        </div>
+
+    <div style="margin-left: 10%; margin-top: 3%; width: 500px; font-style: italic;">
+        <h3>還無法決定想前往哪間公司嗎?</h3>
     </div>
 
-    <div>
-        <a href="#" class="btn blue">&lt&lt 前一篇</a>
-        <a href="#" class="btn blue" style="float:right;">後一篇 &gt&gt</a>
-    </div>
+    {% block comments %}
+    {% endblock %}
+
+    {% block all_comments %}
+    {% endblock %}
 
     <div class="wrapper">
         <footer class="footer" id="footer" style="color: rgb(78, 73, 82)">
