@@ -1,26 +1,49 @@
 from django import forms
 from django.db import models
+from django.forms import widgets
 from .models import Comment
 from django.core.exceptions import ValidationError
 
 class CommentModelForm(forms.ModelForm):
+    CHOICES = [
+        ("1", "1"),
+        ("2", "2"),
+        ("3", "3"),
+        ("4", "4"),
+        ("5", "5")
+    ]
 
+    comment_title = forms.CharField(
+        widget = forms.TextInput(attrs={"class": "form-control", "placeholder": "為這篇評論想個有趣的標題", "style": "margin-bottom: 2%;"}),
+        label = "標題",
+        required = True
+    )
+
+    comment_name = forms.CharField(
+        widget = forms.TextInput(attrs={"class": "form-control", "placeholder": "填入姓名", "style": "margin-bottom: 2%;"}),
+        label = "作者",
+        required = True
+    )
+
+    comment_company = forms.CharField(
+        widget = forms.TextInput(attrs={"class": "form-control", "placeholder": "填入公司名稱", "style": "margin-bottom: 2%;"}),
+        label = "公司名稱",
+        required = True
+    )
+
+    comment_score = forms.ChoiceField(
+        choices = CHOICES,
+        widget = forms.RadioSelect(attrs={"class": ""}),
+        label = "評分",
+        required = True
+    )
+
+    comment_context = forms.CharField(
+        widget = forms.Textarea(attrs={"class": "form-control", "rows": "4", "style": "margin-bottom: 2%;"}),
+        label = "評論內容",
+        required = True
+    )
+    
     class Meta:
         model = Comment
         fields = "__all__"
-
-        widgets = {
-            "comment_title": forms.TextInput(attrs={"class": "form-control", "placeholder": "為這篇評論想個有趣的標題", "style": "margin-bottom: 2%;"}),
-            "comment_name": forms.TextInput(attrs={"class": "form-control", "placeholder": "填入姓名", "style": "margin-bottom: 2%;"}),
-            "comment_company": forms.TextInput(attrs={"class": "form-control", "placeholder": "填入公司名稱", "style": "margin-bottom: 2%;"}),
-            "comment_score": forms.RadioSelect(attrs={"class": "form-control", "style": "margin-bottom: 2%;"}),
-            "comment_context": forms.Textarea(attrs={"class": "form-control", "rows": "4", "style": "margin-bottom: 2%;"})
-        }
-
-        labels = {
-            "comment_title": "標題",
-            "comment_name": "作者",
-            "comment_company": "公司名稱",
-            "comment_score": "評分",
-            "comment_context": "評論內容"
-        }
