@@ -1,10 +1,4 @@
-{% extends "base.html" %}
-
-{% block all_comments %}
-
-<div class="row row-cols-1 row-cols-md-4" style="margin: 3%;">
-        
-    {% for p in comment_list %}
+{% for p in comment_list %}
 <div class="col mb-4">
     <div class="card" style="background-color: #F4DDE6;">
         <div class="card-body" style="margin-left: 5%;margin-top: 5%; cursor:pointer;" 
@@ -15,7 +9,3 @@
         </div>
     </div>
 </div>
-{% endfor %}
-</div>
-
-{% endblock %}

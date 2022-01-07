@@ -92,3 +92,7 @@ body {
 label {
     font-size: 120%;
 }
+.card{
+    --attr-bg: attr(bgcolor color);
+    background-color: var(--attr-bg);
+}

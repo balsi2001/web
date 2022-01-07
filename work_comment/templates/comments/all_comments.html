@@ -2,25 +2,20 @@
 
 {% block all_comments %}
 
-<h3>所有評論</h3>
-
-   <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>標題</th>
-                <th>公司名稱</th>
-                <th>評分分數</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for p in comment_list %}
-            <tr>
-                <td>{{ p.comment_title }}</td>
-                <td>{{ p.comment_company }}</td>
-                <td>{{ p.comment_score }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-   </table>
+<div class="row row-cols-1 row-cols-md-4" style="margin: 3%;">
+        
+    {% for p in comment_list %}
+<div class="col mb-4">
+    <div class="card" style="background-color: #F4DDE6;">
+        <div class="card-body" style="margin-left: 5%;margin-top: 5%; cursor:pointer;" 
+        >           
+            <h4 class="card-title">標題:{{ p.comment_title }}</h4><br>
+            <h5 class="card-company">公司名稱：{{ p.comment_company }}</h5><br>
+            <h5 class="card-score">評分分數：{{ p.comment_score }}</h5><br>
+        </div>
+    </div>
+</div>
+{% endfor %}
+</div>
 
 {% endblock %}
