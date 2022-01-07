@@ -23,7 +23,7 @@
     </div>
 
     <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="#"><img src="/static/FCU_LOGO.png" width="50px" height="50px"></a>
+        <a class="navbar-brand" href="/"><img src="/static/FCU_LOGO.png" width="50px" height="50px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -31,10 +31,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="all_comments.html">所有評論</a>
+                    <a class="nav-link" href="/all_comments">所有評論</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="write_comment.html">我要評論</a>
+                    <a class="nav-link" href="/write">我要評論</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#footer">關於我們</a>
@@ -51,6 +51,12 @@
     {% endblock %}
 
     {% block all_comments %}
+    {% endblock %}
+
+    {% block single_comment %}
+    {% endblock %}
+
+    {% block write_comment %}
     {% endblock %}
 
     <div class="wrapper">
