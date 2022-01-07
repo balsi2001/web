@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import *
 from .forms import CommentModelForm
-
+from .models import Comment
 def index(request):
     return render(
         request,
@@ -9,15 +9,26 @@ def index(request):
     )
 
 def all_comments(request):
+    comment_list=Comment.objects.all()
+    context={
+        'comment_list':comment_list
+    }
     return render(
         request,
         "comments/all_comments.html",
+        context
     )
+   
 
 def singel_comment(request):
+    comment_list=Comment.objects.all()
+    context={
+        'comment_list':comment_list
+    }
     return render(
         request,
         "comments/signle_comment.html",
+        context
     )
 
 def write_comment(request):

@@ -8,5 +8,7 @@ class Comment(models.Model):
     comment_score = models.IntegerField()    
     comment_context = models.CharField(max_length=256)
 
+    class Mata:
+        ordering = ['-comment_title']
     def __str__(self):
         return self.comment_title

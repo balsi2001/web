@@ -2,88 +2,25 @@
 
 {% block all_comments %}
 
-<div class="row row-cols-1 row-cols-md-4" style="margin: 3%;">
-        
-    <div class="col mb-4">           
-        <div class="card" style="background-color: #E0F5E8; cursor:pointer;" 
-        onclick="location.href='single_comment.html';">              
-            <div class="card-body" style="margin-left: 5%;margin-top: 5%;">
-                <h4 class="card-title">標題</h4><br>
-                <h5 class="card-company">公司名稱：</h5><br>
-                <h5 class="card-score">評分分數：</h5><br>
-            </div>
-        </div>
-    </div>
-    <div class="col mb-4">
-        <div class="card" style="background-color: #F4DDE6;">
-            <div class="card-body" style="margin-left: 5%;margin-top: 5%; cursor:pointer;" 
-            onclick="location.href='single_comment.html';">           
-                <h4 class="card-title">標題</h4><br>
-                <h5 class="card-company">公司名稱：</h5><br>
-                <h5 class="card-score">評分分數：</h5><br>
-            </div>
-        </div>
-    </div>
-    <div class="col mb-4">           
-        <div class="card" style="background-color: #E0F5E8; cursor:pointer;" 
-        onclick="location.href='single_comment.html';">              
-            <div class="card-body" style="margin-left: 5%;margin-top: 5%;">
-                <h4 class="card-title">標題</h4><br>
-                <h5 class="card-company">公司名稱：</h5><br>
-                <h5 class="card-score">評分分數：</h5><br>
-            </div>
-        </div>
-    </div>
-    <div class="col mb-4">
-        <div class="card" style="background-color: #F4DDE6;">
-            <div class="card-body" style="margin-left: 5%;margin-top: 5%; cursor:pointer;" 
-            onclick="location.href='single_comment.html';">           
-                <h4 class="card-title">標題</h4><br>
-                <h5 class="card-company">公司名稱：</h5><br>
-                <h5 class="card-score">評分分數：</h5><br>
-            </div>
-        </div>
-    </div>
-    <div class="col mb-4">           
-        <div class="card" style="background-color: #E0F5E8; cursor:pointer;" 
-        onclick="location.href='single_comment.html';">              
-            <div class="card-body" style="margin-left: 5%;margin-top: 5%;">
-                <h4 class="card-title">標題</h4><br>
-                <h5 class="card-company">公司名稱：</h5><br>
-                <h5 class="card-score">評分分數：</h5><br>
-            </div>
-        </div>
-    </div>
-    <div class="col mb-4">
-        <div class="card" style="background-color: #F4DDE6;">
-            <div class="card-body" style="margin-left: 5%;margin-top: 5%; cursor:pointer;" 
-            onclick="location.href='single_comment.html';">           
-                <h4 class="card-title">標題</h4><br>
-                <h5 class="card-company">公司名稱：</h5><br>
-                <h5 class="card-score">評分分數：</h5><br>
-            </div>
-        </div>
-    </div>
-    <div class="col mb-4">           
-        <div class="card" style="background-color: #E0F5E8; cursor:pointer;" 
-        onclick="location.href='single_comment.html';">              
-            <div class="card-body" style="margin-left: 5%;margin-top: 5%;">
-                <h4 class="card-title">標題</h4><br>
-                <h5 class="card-company">公司名稱：</h5><br>
-                <h5 class="card-score">評分分數：</h5><br>
-            </div>
-        </div>
-    </div>
-    <div class="col mb-4">
-        <div class="card" style="background-color: #F4DDE6;">
-            <div class="card-body" style="margin-left: 5%;margin-top: 5%; cursor:pointer;" 
-            onclick="location.href='single_comment.html';">           
-                <h4 class="card-title">標題</h4><br>
-                <h5 class="card-company">公司名稱：</h5><br>
-                <h5 class="card-score">評分分數：</h5><br>
-            </div>
-        </div>
-    </div>
-</div>
+<h3>所有評論</h3>
+
+   <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>標題</th>
+                <th>公司名稱</th>
+                <th>評分分數</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in comment_list %}
+            <tr>
+                <td>{{ p.comment_title }}</td>
+                <td>{{ p.comment_company }}</td>
+                <td>{{ p.comment_score }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+   </table>
 
 {% endblock %}
