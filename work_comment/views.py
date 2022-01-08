@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import *
 from .forms import CommentModelForm
 from .models import Comment
+from django.contrib import messages
+
 def index(request):
     return render(
         request,
@@ -38,7 +40,7 @@ def write_comment(request):
 
         if form.is_valid():
             form.save()
-            return HttpResponse("儲存成功")
+            messages.success(request, "儲存成功")
 
     form = CommentModelForm()
 
