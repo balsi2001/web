@@ -5,17 +5,17 @@
 <div class="row row-cols-1 row-cols-md-4" style="margin: 3%;">
         
     {% for p in comment_list %}
-<div class="col mb-4">
-    <div class="card" style="background-color: #F4DDE6;">
-        <div class="card-body" style="margin-left: 5%;margin-top: 5%; cursor:pointer;" 
-        >           
-            <h4 class="card-title">標題:{{ p.comment_title }}</h4><br>
-            <h5 class="card-company">公司名稱：{{ p.comment_company }}</h5><br>
-            <h5 class="card-score">評分分數：{{ p.comment_score }}</h5><br>
+        <div class="col mb-4">
+            <div class="card" style="background-color: #F4DDE6;">
+                <div class="card-body" style="margin-left: 5%;margin-top: 5%; cursor:pointer;">           
+                    <h4 class="card-title">標題:{{ p.comment_title }}</h4><br>
+                    <h5 class="card-company">公司名稱：{{ p.comment_company }}</h5><br>
+                    <h5 class="card-score">評分分數：{{ p.comment_score }}</h5><br>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-{% endfor %}
+    {% endfor %}
+
 </div>
 
 {% endblock %}

@@ -5,9 +5,17 @@ from .models import Comment
 from django.contrib import messages
 
 def index(request):
+    length = Comment.objects.all().count()
+    comment_list = Comment.objects.all()[length-3:length]
+
+    context = {
+        "comment_list": comment_list
+    }
+
     return render(
         request,
         "comments/index.html",
+        context
     )
 
 def all_comments(request):
@@ -20,7 +28,6 @@ def all_comments(request):
         "comments/all_comments.html",
         context
     )
-   
 
 def singel_comment(request):
     comment_list=Comment.objects.all()
