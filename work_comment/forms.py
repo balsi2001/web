@@ -1,8 +1,5 @@
 from django import forms
-from django.db import models
-from django.forms import widgets
 from .models import Comment
-from django.core.exceptions import ValidationError
 
 class CommentModelForm(forms.ModelForm):
     CHOICES = [
@@ -33,7 +30,7 @@ class CommentModelForm(forms.ModelForm):
 
     comment_score = forms.ChoiceField(
         choices = CHOICES,
-        widget = forms.RadioSelect(attrs={"class": ""}),
+        widget = forms.RadioSelect(),
         label = "評分",
         required = True
     )

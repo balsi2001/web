@@ -92,3 +92,11 @@ body {
 label {
     font-size: 120%;
 }
+
+#id_comment_score {
+    display: flex;
+}
+
+#id_comment_score > div {
+    margin-left: 3%;;
+}
