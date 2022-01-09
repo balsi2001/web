@@ -7,7 +7,7 @@ class Comment(models.Model):
     comment_name = models.CharField(max_length=10, null=True)
     comment_company = models.CharField(max_length=15)
     comment_score = models.IntegerField()
-    comment_context = models.CharField(max_length=256)
+    comment_context = models.CharField(max_length=1000)
 
     def get_url(self):
         return reverse("Comment_detail", args=[str(self.id)])

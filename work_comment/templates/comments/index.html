@@ -10,9 +10,9 @@
         <div style="border-color:#aaaaee; border-width:1px; border-style:solid; padding:20px">
             
             {% for data in comment_list %}
-                <div class="card1" style="width:100%; height: 35%; overflow-y: auto;">
+                <div class="card1" style="width:100%; height: 35%; overflow-y: auto; cursor:pointer;" onclick="location.href='{{ data.get_url }}';">
                     <div class="card-body">
-                        <a href="#" class="card-link1" style="font-size: 150%;color: #000;">{{ data.comment_title }}</a>
+                        <h6 class="card-link1" style="font-size: 150%;color: #000;">{{ data.comment_title }}</h6>
                         <h6 class="card-subtitle mb-2 text-muted">作者: {{ data.comment_name }}</h6>
                         <p class="card-text">{{ data.comment_context }}</p>
                     </div>
