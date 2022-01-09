@@ -1,5 +1,5 @@
 from django.views import generic
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.http import *
 from .forms import CommentModelForm
 from .models import Comment
@@ -54,3 +54,17 @@ def write_comment(request):
 class CommentDetailView(generic.DetailView):
     model = Comment
     template_name = "comments/single_comment.html"
+
+    def get(self, request, pk):
+        comment = get_object_or_404(Comment, pk=pk)
+        
+        prev = Comment.objects.filter(id__lt=comment.id).last()
+        next = Comment.objects.filter(id__gt=comment.id).first()
+
+        context = {
+            "comment": comment,
+            "previous": prev,
+            "next": next
+        }
+
+        return render(request, self.template_name, context)
