@@ -1,3 +1,4 @@
+from django.views import generic
 from django.shortcuts import render
 from django.http import *
 from .forms import CommentModelForm
@@ -23,20 +24,10 @@ def all_comments(request):
     context={
         'comment_list':comment_list
     }
+
     return render(
         request,
         "comments/all_comments.html",
-        context
-    )
-
-def singel_comment(request):
-    comment_list=Comment.objects.all()
-    context={
-        'comment_list':comment_list
-    }
-    return render(
-        request,
-        "comments/signle_comment.html",
         context
     )
 
@@ -59,3 +50,7 @@ def write_comment(request):
         request,
         "comments/write_comment.html", context,
     )
+
+class CommentDetailView(generic.DetailView):
+    model = Comment
+    template_name = "comments/single_comment.html"
