@@ -8,7 +8,7 @@ from django.contrib import messages
 def index(request):
     length = Comment.objects.all().count()
     comment_list = Comment.objects.all()[length-3::-1]
-    print(comment_list)
+
     context = {
         "comment_list": comment_list
     }
