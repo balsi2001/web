@@ -4,7 +4,10 @@ from django.http import *
 from .forms import CommentModelForm
 from .models import Comment
 from django.contrib import messages
-
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
+from django.views.generic.edit import CreateView
+from django.contrib.auth.decorators import login_required
 def index(request):
     length = Comment.objects.all().count()
     comment_list = Comment.objects.all()[length-3::-1]
@@ -18,7 +21,10 @@ def index(request):
         "comments/index.html",
         context
     )
-
+class SignUp(CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy("login")
+    template_name = "registration/login.html"
 def all_comments(request):
     comment_list=Comment.objects.all()
     context={
@@ -30,7 +36,7 @@ def all_comments(request):
         "comments/all_comments.html",
         context
     )
-
+@login_required
 def write_comment(request):
     
     if request.method == "POST":
