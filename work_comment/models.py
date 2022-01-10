@@ -13,6 +13,6 @@ class Comment(models.Model):
         return reverse("Comment_detail", args=[str(self.id)])
 
     class Mata:
-        ordering = ['-comment_title']
+        ordering = ['-comment_score']
     def __str__(self):
         return self.comment_title
