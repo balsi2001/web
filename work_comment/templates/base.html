@@ -45,14 +45,14 @@
                     </li>
                     {% else %}
                     <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">登入</a>
+                    <a class="nav-link" href="/login">登入</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'signup' %}">註冊</a>
                     {% endif %}
                 </li>
                 <li class="nav-item">
-                    <p class="nav-link">Hello, {{ user.username|default:'Guest' }}</p>
+                    <p class="nav-link">{{ user.username }}</p>
                 </li>
             </ul>
         </div>
@@ -70,8 +70,12 @@
     {% block write_comment %}
     {% endblock %}
 
-    {% block SignUp %}
+    {% block signup %}
     {% endblock %}
+
+    {% block login %}
+    {% endblock %}
+
     <div class="wrapper">
         <footer class="footer" id="footer" style="color: rgb(78, 73, 82)">
             <div style="text-align: center;">

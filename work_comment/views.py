@@ -1,13 +1,12 @@
+from django.contrib.auth.forms import AuthenticationForm
 from django.views import generic
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.http import *
-from .forms import CommentModelForm
+from .forms import *
 from .models import Comment
 from django.contrib import messages
-from django.contrib.auth.forms import UserCreationForm
-from django.urls import reverse_lazy
-from django.views.generic.edit import CreateView
 from django.contrib.auth.decorators import login_required
+
 def index(request):
     length = Comment.objects.all().count()
     comment_list = Comment.objects.all()[length-3::-1]
@@ -16,15 +15,8 @@ def index(request):
         "comment_list": comment_list
     }
 
-    return render(
-        request,
-        "comments/index.html",
-        context
-    )
-class SignUp(CreateView):
-    form_class = UserCreationForm
-    success_url = reverse_lazy("login")
-    template_name = "registration/login.html"
+    return render(request, "comments/index.html", context)
+
 def all_comments(request):
     comment_list=Comment.objects.all()
     context={
@@ -32,13 +24,10 @@ def all_comments(request):
     }
 
     return render(
-        request,
-        "comments/all_comments.html",
-        context
-    )
-@login_required
+        request, "comments/all_comments.html", context)
+
+@login_required(login_url="/login")
 def write_comment(request):
-    
     if request.method == "POST":
         form = CommentModelForm(request.POST)
 
@@ -52,10 +41,7 @@ def write_comment(request):
         "form": form
     }
 
-    return render(
-        request,
-        "comments/write_comment.html", context,
-    )
+    return render(request, "comments/write_comment.html", context)
 
 class CommentDetailView(generic.DetailView):
     model = Comment
@@ -74,3 +60,41 @@ class CommentDetailView(generic.DetailView):
         }
 
         return render(request, self.template_name, context)
+
+def signup(request):
+    form = SignupForm()
+
+    if request.method == "POST":
+        form = SignupForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            
+            return redirect("/login")
+
+
+    context = {
+        "form": form
+    }
+
+    return render(request, "registration/signup.html", context)
+
+def login(request):
+    form = LoginForm()
+
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+
+        user = AuthenticationForm(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            
+            return redirect("/")
+
+    context = {
+        "form": form
+    }
+
+    return render(request, "registration/login.html", context)
