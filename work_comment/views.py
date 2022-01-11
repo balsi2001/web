@@ -1,9 +1,11 @@
+from django.contrib.auth.forms import UserCreationForm
 from django.views import generic
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.http import *
 from .forms import CommentModelForm
 from .models import Comment
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     length = Comment.objects.all().count()
@@ -31,6 +33,7 @@ def all_comments(request):
         context
     )
 
+@login_required
 def write_comment(request):
     
     if request.method == "POST":
@@ -68,3 +71,24 @@ class CommentDetailView(generic.DetailView):
         }
 
         return render(request, self.template_name, context)
+
+def register(request):
+
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        print("Errors", form.errors)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, "註冊成功")
+
+            return redirect("/")
+        else:
+            return render(request, "registration/register.html", {"form": form})
+    else:
+        form = UserCreationForm()
+        context = {
+            "form": form
+        }
+
+        return render(request, "registration/register.html", context)
